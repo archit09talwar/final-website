@@ -1,0 +1,69 @@
+*{
+box-sizing: border-box;
+}
+
+body{
+    height:100vh;
+}
+
+.main-box{
+    border-radius:25px;
+    background-color: #ffb5bc;
+       
+}
+
+h3 {
+    margin-top:15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:2.7rem;
+}
+.Price-heading {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:1.7rem;
+    font-weight:bold;
+
+}
+
+.div-text{
+    font-size: 1.3rem;;
+}
+
+.div-date{
+    font-size:1.2rem;
+    font-weight:bolder;
+}
+
+img{
+    border-radius:25px;
+}
+
+.small-divs {
+    color:white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:1.4rem;
+    
+}
+
+.k {
+    border-radius:8px;
+}
+
+
+.radio-txt{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:1.3rem;
+    margin:15px;
+    margin-left:5px;
+    color: #198754;
+}
+
+.footer {
+    height:70px;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+}
+
+.top-margin{
+    margin-top: 15vh;
+}

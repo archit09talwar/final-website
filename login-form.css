@@ -1,0 +1,32 @@
+/* available fonts
+font-family: 'Ubuntu', sans-serif; */
+
+body{
+    background-image: url('./images/576.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.main-box{
+    border: white 1px solid;
+    width: 35%;
+    color: #027991;
+    margin-top: 5%;
+    border-radius: 25px;
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgb(0 17 255 / 37%);
+    backdrop-filter: blur( 12px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+.form-label{
+    font-size: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
