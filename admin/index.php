@@ -18,19 +18,18 @@
         <div class="col-3 sidebar">
         <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: auto;height: 98vh;">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <img class="" src="../images/La Burger Logo.png" width="40" height="40" ></img>
             <span class="ms-4 fs-4 sidebar-heading">Manage Content</span>
             </a>
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
+                <a href="" class="nav-link text-white" aria-current="page">
                
                 Admin Logout
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link text-white">
+                <a href="index.php?view=<?php echo "view" ?>" class="nav-link text-white">
                 
                 View Posts
                 </a>
@@ -62,6 +61,72 @@
         <!-- admin panel starts here -->
         <div class="col-9 main-content bg-light">
             <h1 class="m-3 bg-success heading">Admin panel</h1>
+
+
+            <!-- here the copied content start -->
+            <div class="right table-responsive">
+              <?php
+              if(isset($_GET['insert']))
+              {
+                  include("insert_product.php");
+              }
+              if(isset($_GET['view']))
+                {?>
+                  <table class="table .table-bordered">
+    <thead>
+      <tr>
+        <th>Product Number</th>
+        <th>Product Title</th>
+        <th>Product Date</th>
+        <th>Product Price</th>
+        <th>Product Content</th>
+        <th>Product Image</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          
+      </tr>
+    </thead>
+                 <?php
+                 $conn   =mysqli_connect("localhost","root","");
+                mysqli_select_db($conn,"burger");
+                $query="select * from productnew order by 1 DESC";
+         $run=mysqli_query($conn, $query);
+                      $i=0;
+                    while($row = mysqli_fetch_assoc($run))
+                    {
+                        $i++;
+                 $title=$row['P_Title1'];
+                        $id=$row['P_Id'];
+                 $date=$row['P_Date'];
+                 $price=$row['P_Price'];
+                 $content=substr($row['P_Title2'],0,100);
+                 $image=$row['P_Image'];
+                ?>
+             
+    <tbody>
+      <tr>
+        <td><?php echo $i?></td>
+        <td><?php echo $title ?></td>
+        <td><?php echo $date ?></td>
+        <td><?php echo $price ?></td>
+        <td><?php echo $content ?></td>
+        <td><img src= "../images/<?php echo $image ?>" width='50px'></td>
+          <td><a href="edit.php?edit=<?php  echo $id ?>   ">Edit</a></td>
+          <td><a href="delete.php?del=<?php echo $id ?>">Delete</a></td>
+    
+        </tr>
+    </tbody>
+ 
+                    
+                <?php
+                    }}
+                ?>
+                       </table>
+            </div>
+
+            <!-- here the copied content ends -->
+
+
             
         </div>
         <!-- admin panel ends here -->
