@@ -15,6 +15,10 @@
               <a class="nav-link px-4" href="#contacts">Contact</a>
               <a class="nav-link px-4" href="./input-form.html">Form</a>
             </div>
+            <form class="d-flex" action="search.php" method="get">
+            <input class="form-control me-2 ms-3" type="search" placeholder="Search" name="search" aria-label="Search">
+            <button class="btn btn-outline-danger mx-2" type="submit">Search</button>
+            </form>
           </div>
         </div>
       </nav>

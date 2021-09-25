@@ -13,18 +13,34 @@
     <?php
         include("includes/navbar.php");
     ?>
+    <?php
+    $conn   =mysqli_connect("localhost","root","");
+    mysqli_select_db($conn,"burger");
+    $page_id=$_GET['id'];
+    $query="select * from productnew where P_Id='$page_id'";
+    $run=mysqli_query($conn, $query);
+    while($row = mysqli_fetch_assoc($run)) {
+    //echo "id: " ."<h1 style='color:red;display:inline'>" .$row["P_Id"]."</h1>"."title is:".$row["P_Title1"];
+                 $title=$row['P_Title1'];
+                 $date=$row['P_Date'];
+                 $price=$row['P_Price'];
+                 $content=$row['P_Title2'];
+                 $image=$row['P_Image'];
+    }
+
+    ?>
 
     <div class="container top-margin">
         <div class="main-box p-4 container-fluid">
             <div class="row">
                 <div class="col-md-4 p-4">
-                    <img src="./images/2.jpg" width="100%" height="auto" class="my-5" alt="div-img">
+                    <img src="./images/<?php echo $image ?>" width="100%" height="auto" class="my-5" alt="div-img">
                 </div>
                 <div class="col-md-4">
-                    <h3>Vegetables</h3>
-                    <p class="Price-heading">Price : $38</p>
-                    <p class="div-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, repudiandae nesciunt nihil culpa magnam voluptate.</p>
-                    <p class="div-date">This was updated on : 09/10/2020</p>
+                    <h3><?php echo $title ?></h3>
+                    <p class="Price-heading">Price : $<?php echo $price ?></p>
+                    <p class="div-text"><?php echo $content ?></p>
+                    <p class="div-date">This was updated on : <?php echo $date ?></p>
                     <form action="new-page.php" method="post">
                         <input type="radio"  name="weight" id="1kg" value="1"><label for="1kg"><span class="radio-txt">1 KG</span></label>
                         <input type="radio"  name="weight" id="1.5kg" value="1.5"><label for="1.5kg"><span class="radio-txt">1.5 KG</span></label>
