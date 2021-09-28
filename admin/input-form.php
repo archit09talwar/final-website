@@ -1,20 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="./login-form.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>Login Form</title>
-  </head>
-  <body>
-    <div class="container p-5 main-box">
+        <div class="container-inputform p-4 ms-auto me-auto" style="border-radius:25px;width:450px;margin-top:10vh;background-color:">
+        <div class="container main-box">
         <div class="row">
-                <h1 class="text-center">INSERT POST</h1>
+                <h1 class="text-center" style="color:#00203FFF">INSERT POST</h1>
                 <!-- FORM STARTS HERE -->   
                 <div class="col-md-12 col-lg-12">
                     <form class="needs-validation" method="post" enctype="multipart/form-data">
@@ -51,17 +38,17 @@
                           </div>
                         </div>
             
-                      <button class="btn btn-outline-primary btn-lg" name="submit" type="submit">Submit Enquiry</button>
+                      <button class="btn btn-outline-dark btn-lg" name="submit" type="submit">Submit Enquiry</button>
                     </form>
                   </div>
                 <!-- FORM ENDS HERE -->
 
         </div>
-    </div>
+        </div>
+        </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  </body>
-</html>
+
 
 
 <?php

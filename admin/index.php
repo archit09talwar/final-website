@@ -8,7 +8,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Hello, world!</title>
+    <title>Admin Panel!</title>
+    <style>
+      .text-color-green{
+        color: #ADEFD1FF;
+        font-weight:bolder;
+      }
+      .table-responsive{
+        background-color: #ADEFD1FF;
+         height: 90%;
+      }
+
+      .heading{
+        background-color:#00203FFF;
+      }
+      th{
+        color:#00203FFF;
+      }
+      .heading{
+        color:#ADEFD1FF;
+      }
+      .nav-link:hover{
+        color:white;
+      }
+      .nav-link:active{
+        background-color:white;
+        color:black;
+      }
+      .container-inputform{
+        position:absolute;
+        top: 0vh;
+        right: 49vh;
+      }
+    </style>
   </head>
   <body>
 
@@ -16,26 +48,26 @@
     <div class="row">
         <!-- sidebar starts here -->
         <div class="col-3 sidebar">
-        <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: auto;height: 98vh;">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <span class="ms-4 fs-4 sidebar-heading">Manage Content</span>
+        <div class="sidebar d-flex flex-column flex-shrink-0 p-3 " style="width: auto;height: 98vh;background-color:#00203FFF; color:#ADEFD1FF;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+            <span class="ms-4 fs-4 sidebar-heading text-color-green">Manage Content</span>
             </a>
             <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
+            <ul class="nav nav-pills text-color-green flex-column mb-auto">
             <li class="nav-item">
-                <a href="" class="nav-link text-white" aria-current="page">
+                <a href="" class="nav-link text-color-green" aria-current="page">
                
                 Admin Logout
                 </a>
             </li>
             <li>
-                <a href="index.php?view=<?php echo "view" ?>" class="nav-link text-white">
+                <a href="index.php?view=<?php echo "view" ?>" class="nav-link text-color-green">
                 
                 View Posts
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link text-white">
+                <a href="index.php?insert=<?php echo "insert" ?>" class="nav-link text-color-green">
                 
                 Insert new posts
                 </a>
@@ -45,7 +77,7 @@
             <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>Admin</strong>
+                <strong class="text-color-green">Admin</strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                 
@@ -59,8 +91,8 @@
         </div>
         <!-- sidebar ends here -->
         <!-- admin panel starts here -->
-        <div class="col-9 main-content bg-light">
-            <h1 class="m-3 bg-success heading">Admin panel</h1>
+        <div class="col-9 main-content">
+            <h1 class="m-3 heading">Admin panel</h1>
 
 
             <!-- here the copied content start -->
@@ -68,7 +100,7 @@
               <?php
               if(isset($_GET['insert']))
               {
-                  include("insert_product.php");
+                  include("input-form.php");
               }
               if(isset($_GET['view']))
                 {?>
@@ -111,7 +143,7 @@
         <td><?php echo $price ?></td>
         <td><?php echo $content ?></td>
         <td><img src= "../images/<?php echo $image ?>" width='50px'></td>
-          <td><a href="edit.php?edit=<?php  echo $id ?>   ">Edit</a></td>
+          <td><a href="edit-2.php?edit=<?php  echo $id ?>   ">Edit</a></td>
           <td><a href="delete.php?del=<?php echo $id ?>">Delete</a></td>
     
         </tr>
@@ -119,7 +151,7 @@
  
                     
                 <?php
-                    }}
+                    }}  
                 ?>
                        </table>
             </div>
